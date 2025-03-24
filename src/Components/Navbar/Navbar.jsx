@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
 import { MdTravelExplore } from "react-icons/md";
 import { RiCloseCircleLine } from "react-icons/ri";
@@ -6,6 +6,18 @@ import { TbGridDots } from "react-icons/tb";
 import "./Navbar.scss";
 
 const Navbar = () => {
+  const [active, setActive] = useState("navBar");
+ 
+  const showNav = () => {
+    setActive("navBar activeNavbar");
+  };
+  const removeNavbar = () => {
+    setActive("navBar");
+  };
+
+
+
+
   return (
     <section className="navBarSection">
         <header className="header flex">
@@ -19,34 +31,34 @@ const Navbar = () => {
                    
                     </a>
                     </div>
-                    <div className="navBar">
+                    <div className={active}>
                       <ul className="navLists flex">
                         <li className="navItem">
-                          <a href="#navLink" className="navLinks">Home</a>
+                          <a href="#navLink" className="navLink">Home</a>
                         </li>
 
                         <li className="navItem">
-                          <a href="#navLink" className="navLinks">Packages</a>
+                          <a href="#navLink" className="navLink">Packages</a>
                         </li>
 
                         <li className="navItem">
-                          <a href="#navLink" className="navLinks">Shop</a>
+                          <a href="#navLink" className="navLink">Shop</a>
                         </li>
 
                         <li className="navItem">
-                          <a href="#navLink" className="navLinks">About</a>
+                          <a href="#navLink" className="navLink">About</a>
                         </li>
 
                         <li className="navItem">
-                          <a href="#navLink" className="navLinks">Pages</a>
+                          <a href="#navLink" className="navLink">Pages</a>
                         </li>
 
                         <li className="navItem">
-                          <a href="#navLink" className="navLinks">News</a>
+                          <a href="#navLink" className="navLink">News</a>
                         </li>
 
                         <li className="navItem">
-                          <a href="#navLink" className="navLinks">Contact</a>
+                          <a href="#navLink" className="navLink">Contact</a>
                         </li>
 
                         <button className="btn">
@@ -54,13 +66,13 @@ const Navbar = () => {
                         </button>
                       </ul>
 
-                      <div className="classNavbar">
+                      <div onClick={removeNavbar}className="closeNavbar">
                       <RiCloseCircleLine className="icons" />
 
                       </div>
                     </div>
 
-                    <div className="toggleNavbar">
+                    <div onClick={showNav} className="toggleNavbar">
                       <TbGridDots className="icons"/>
 
                     </div>
