@@ -116,6 +116,7 @@ const Data=[
     fees: "$500",
     description: 'Bali is an Indonesian Island and one of the best holiday destination in the Indonesian archipelage.Bali is known for its volcanic mountain,history,art & culture,food,temples and beautiful sandy beaches.'
    },
+   
 ]
 
 
